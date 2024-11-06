@@ -1,0 +1,29 @@
+<!-- File: res/layout/activity_artworks.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/artworksTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Artworks"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Placeholder for Artworks List -->
+    <TextView
+        android:id="@+id/placeholderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="List of artworks will be displayed here."
+        android:textSize="16sp"
+        android:textColor="#555555" />
+
+</LinearLayout>

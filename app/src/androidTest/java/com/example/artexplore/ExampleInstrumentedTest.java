@@ -1,4 +1,4 @@
-package com.example.artexploreguide;
+package com.example.artexplore;
 
 import android.content.Context;
 
