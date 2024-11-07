@@ -19,9 +19,6 @@
             android:name="com.example.artexplore.ArtworksActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.artexplore.ArtStyleAdapter"
-            android:exported="false" />
-        <activity
             android:name="com.example.artexplore.ArtStylesActivity"
             android:exported="false" />
         <activity
@@ -37,5 +34,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

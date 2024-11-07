@@ -8,42 +8,36 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.artexplore.model.Artwork;
 import com.example.artexploreguide.R;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ArtworksActivity extends AppCompatActivity {
 
-    private String artStyleName;
+    private String selectedArtStyle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artworks);
 
-        // Retrieve the selected art style from the intent
-        artStyleName = getIntent().getStringExtra("ART_STYLE_NAME");
-
         RecyclerView recyclerView = findViewById(R.id.recyclerViewArtworks);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2)); // 2 columns
 
-        // Create a list of artworks based on the selected art style
-        List<Artwork> artworks = new ArrayList<>();
-        if ("Impressionism".equals(artStyleName)) {
-            artworks.add(new Artwork("Starry Night", "A famous painting by Vincent van Gogh.", R.drawable.sample_image));
-            artworks.add(new Artwork("Impression, Sunrise", "A painting by Claude Monet.", R.drawable.sample_image));
-        } else if ("Abstract".equals(artStyleName)) {
-            artworks.add(new Artwork("Composition X", "A painting by Wassily Kandinsky.", R.drawable.sample_image));
-            artworks.add(new Artwork("Squares with Concentric Circles", "A painting by Wassily Kandinsky.", R.drawable.sample_image));
-        } else if ("Cubism".equals(artStyleName)) {
-            artworks.add(new Artwork("Les Demoiselles d'Avignon", "A painting by Pablo Picasso.", R.drawable.sample_image));
-            artworks.add(new Artwork("Violin and Candlestick", "A painting by Georges Braque.", R.drawable.sample_image));
-        }
+        // Get the selected art style from the intent
+        selectedArtStyle = getIntent().getStringExtra("ART_STYLE_NAME");
 
-        // Set the adapter for the RecyclerView
+        // Load artworks based on selected art style
+        List<Artwork> artworks = loadArtworksFromJson(selectedArtStyle);
+
         ArtworkAdapter adapter = new ArtworkAdapter(artworks, new ArtworkAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Artwork artwork) {
-                // Pass the selected artwork details to ArtDetailActivity
                 Intent intent = new Intent(ArtworksActivity.this, ArtDetailActivity.class);
                 intent.putExtra("ARTWORK_TITLE", artwork.getTitle());
                 intent.putExtra("ARTWORK_DESCRIPTION", artwork.getDescription());
@@ -51,7 +45,37 @@ public class ArtworksActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         recyclerView.setAdapter(adapter);
+    }
+
+    // Load artworks from JSON based on selected art style
+    private List<Artwork> loadArtworksFromJson(String artStyle) {
+        List<Artwork> artworks = new ArrayList<>();
+        try {
+            InputStream is = getResources().openRawResource(R.raw.artworks);
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            String json = new String(buffer, StandardCharsets.UTF_8);
+
+            JSONArray jsonArray = new JSONArray(json);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject artworkObject = jsonArray.getJSONObject(i);
+                String artStyleFromJson = artworkObject.getString("artstyle");
+
+                if (artStyleFromJson.equals(artStyle)) {
+                    String title = artworkObject.getString("title");
+                    String description = artworkObject.getString("description");
+                    String image = artworkObject.getString("image");
+
+                    int imageResId = getResources().getIdentifier(image, "drawable", getPackageName());
+                    artworks.add(new Artwork(title, description, imageResId));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return artworks;
     }
 }
