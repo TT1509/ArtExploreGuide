@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (isValidUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
                     // Navigate to ArtworksActivity
-                    Intent intent = new Intent(LoginActivity.this, ArtworksActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, ArtStylesActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
@@ -60,7 +60,6 @@ public class LoginActivity extends AppCompatActivity {
         navigateToSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 // Navigate to SignUpActivity
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);

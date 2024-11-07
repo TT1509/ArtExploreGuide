@@ -10,10 +10,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ArtExploreGuide"
+        android:theme="@style/Theme.ArtExplore"
         tools:targetApi="31">
         <activity
+            android:name="com.example.artexplore.ArtDetailActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.artexplore.ArtworksActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.artexplore.ArtStyleAdapter"
+            android:exported="false" />
+        <activity
+            android:name="com.example.artexplore.ArtStylesActivity"
             android:exported="false" />
         <activity
             android:name="com.example.artexplore.SignUpActivity"

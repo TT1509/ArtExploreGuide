@@ -4,13 +4,22 @@ import android.content.Context;
 import java.io.FileOutputStream;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.File;
+import org.json.JSONArray;
 
 public class FileManager {
 
     // Writes data to a file
     public static void writeToFile(String data, Context context, String fileName) {
-        try (FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE)) {
-            fos.write(data.getBytes());
+        try {
+            File file = new File(context.getFilesDir(), fileName);
+            //Create the file if it doesn't exist
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+            try (FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE)) {
+                fos.write(data.getBytes());
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -25,8 +34,7 @@ public class FileManager {
                 stringBuilder.append((char) ch);
             }
         } catch (IOException e) {
-            // If file doesn't exist, return empty string
-            return "";
+            e.printStackTrace();
         }
         return stringBuilder.toString();
     }
