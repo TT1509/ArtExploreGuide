@@ -3,12 +3,14 @@
     "artstyle": "Impressionism",
     "title": "Starry Night",
     "description": "A famous painting by Vincent van Gogh.",
+    "artist": "Vincent van Gogh",
     "image": "sample_image"
   },
   {
     "artstyle": "Impressionism",
     "title": "The Water Lily Pond",
     "description": "A famous painting by Claude Monet.",
+    "artist": "Claude Monet",
     "image": "sample_image"
   }
 ]

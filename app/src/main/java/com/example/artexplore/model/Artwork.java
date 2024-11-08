@@ -4,11 +4,13 @@ public class Artwork {
     private String title;
     private String description;
     private int imageResId;
+    private String artist;
 
-    public Artwork(String title, String description, int imageResId) {
+    public Artwork(String title, String description, int imageResId, String artist) {
         this.title = title;
         this.description = description;
         this.imageResId = imageResId;
+        this.artist = artist;
     }
 
     public String getTitle() {
@@ -21,5 +23,9 @@ public class Artwork {
 
     public int getImageResId() {
         return imageResId;
+    }
+
+    public String getArtist() {
+        return artist;
     }
 }

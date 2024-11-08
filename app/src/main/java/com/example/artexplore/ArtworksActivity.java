@@ -42,6 +42,7 @@ public class ArtworksActivity extends AppCompatActivity {
                 intent.putExtra("ARTWORK_TITLE", artwork.getTitle());
                 intent.putExtra("ARTWORK_DESCRIPTION", artwork.getDescription());
                 intent.putExtra("ARTWORK_IMAGE", artwork.getImageResId());
+                intent.putExtra("ARTWORK_ARTIST", artwork.getArtist());
                 startActivity(intent);
             }
         });
@@ -68,9 +69,10 @@ public class ArtworksActivity extends AppCompatActivity {
                     String title = artworkObject.getString("title");
                     String description = artworkObject.getString("description");
                     String image = artworkObject.getString("image");
+                    String artist = artworkObject.getString("artist");
 
                     int imageResId = getResources().getIdentifier(image, "drawable", getPackageName());
-                    artworks.add(new Artwork(title, description, imageResId));
+                    artworks.add(new Artwork(title, description, imageResId, artist));
                 }
             }
         } catch (Exception e) {
