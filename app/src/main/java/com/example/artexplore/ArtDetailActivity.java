@@ -31,7 +31,7 @@ public class ArtDetailActivity extends AppCompatActivity {
         String artworkTitle = getIntent().getStringExtra("ARTWORK_TITLE");
 
         // Load the specific artwork details from JSON
-        JSONObject artwork = loadArtworkFromJson(artworkTitle);
+        JSONObject artwork = FileManager.loadArtworkFromJson(this, artworkTitle);
 
         if (artwork != null) {
             try {
@@ -53,28 +53,5 @@ public class ArtDetailActivity extends AppCompatActivity {
                 Log.e(TAG, "Error parsing artwork JSON", e);
             }
         }
-    }
-
-    // Method to load artwork details from artworks.json in res/raw
-    private JSONObject loadArtworkFromJson(String artworkTitle) {
-        try {
-            InputStream is = getResources().openRawResource(R.raw.artworks);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            String json = new String(buffer, StandardCharsets.UTF_8);
-
-            JSONArray artworksArray = new JSONArray(json);
-            for (int i = 0; i < artworksArray.length(); i++) {
-                JSONObject artwork = artworksArray.getJSONObject(i);
-                if (artwork.getString("title").equalsIgnoreCase(artworkTitle)) {
-                    return artwork;
-                }
-            }
-        } catch (Exception e) {
-            Log.e(TAG, "Error loading artwork from JSON", e);
-        }
-        return null;
     }
 }

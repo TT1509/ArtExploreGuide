@@ -1,16 +1,44 @@
 [
   {
-    "artstyle": "Impressionism",
-    "title": "Starry Night",
-    "description": "A famous painting by Vincent van Gogh.",
-    "artist": "Vincent van Gogh",
-    "image": "sample_image"
+    "name": "Vincent van Gogh",
+    "biography": "A Dutch post-impressionist painter.",
+    "dateOfBirth": "1853-03-30",
+    "dateOfDeath": "1890-07-29",
+    "image": "vincent_van_gogh_image",
+    "artworks": [
+      {
+        "artstyle": "Impressionism",
+        "title": "Starry Night",
+        "description": "A famous painting by Vincent van Gogh.",
+        "image": "sample_image"
+      },
+      {
+        "artstyle": "Impressionism",
+        "title": "Sunflowers",
+        "description": "Another famous painting by Vincent van Gogh.",
+        "image": "sample_image_2"
+      }
+    ]
   },
   {
-    "artstyle": "Impressionism",
-    "title": "The Water Lily Pond",
-    "description": "A famous painting by Claude Monet.",
-    "artist": "Claude Monet",
-    "image": "sample_image"
+    "name": "Claude Monet",
+    "biography": "A founder of French Impressionist painting.",
+    "dateOfBirth": "1840-11-14",
+    "dateOfDeath": "1926-12-05",
+    "image": "claude_monet_image",
+    "artworks": [
+      {
+        "artstyle": "Impressionism",
+        "title": "The Water Lily Pond",
+        "description": "A famous painting by Claude Monet.",
+        "image": "sample_image"
+      },
+      {
+        "artstyle": "Impressionism",
+        "title": "Impression, Sunrise",
+        "description": "Another iconic piece by Claude Monet.",
+        "image": "sample_image_2"
+      }
+    ]
   }
 ]
