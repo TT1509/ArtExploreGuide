@@ -67,35 +67,39 @@ public class FileManager {
             is.close();
             String json = new String(buffer, StandardCharsets.UTF_8);
 
-            JSONArray jsonArray = new JSONArray(json);
-            for (int i = 0; i < jsonArray.length(); i++) {
-                JSONObject artworkObject = jsonArray.getJSONObject(i);
-                String artStyleFromJson = artworkObject.getString("artstyle");
+            JSONArray artistsArray = new JSONArray(json);
+            for (int i = 0; i < artistsArray.length(); i++) {
+                JSONObject artistObject = artistsArray.getJSONObject(i);
 
-                if (artStyleFromJson.equals(artStyle)) {
-                    String title = artworkObject.getString("title");
-                    String description = artworkObject.getString("description");
-                    String image = artworkObject.getString("image");
+                // Extract artist details
+                String artistName = artistObject.getString("name");
+                String artistBiography = artistObject.getString("biography");
+                String artistImage = artistObject.getString("image");
 
-                    // Parse artist details from the JSON
-                    JSONObject artistObject = artworkObject.getJSONObject("artist");
-                    String artistName = artistObject.getString("name");
-                    String artistBiography = artistObject.getString("biography");
-                    String artistImage = artistObject.getString("image");
+                Date dateOfBirth = dateFormat.parse(artistObject.getString("dateOfBirth"));
+                Date dateOfDeath = artistObject.has("dateOfDeath") ? dateFormat.parse(artistObject.getString("dateOfDeath")) : null;
 
-                    Date dateOfBirth = dateFormat.parse(artistObject.getString("dateOfBirth"));
-                    Date dateOfDeath = artistObject.has("dateOfDeath") ? dateFormat.parse(artistObject.getString("dateOfDeath")) : null;
+                int artistImageResId = context.getResources().getIdentifier(artistImage, "drawable", context.getPackageName());
+                Artist artist = new Artist(artistName, artistBiography, dateOfBirth, dateOfDeath, artistImageResId, new ArrayList<>());
 
-                    int artistImageResId = context.getResources().getIdentifier(artistImage, "drawable", context.getPackageName());
-                    int imageResId = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
+                // Loop through the artworks array for each artist
+                JSONArray artworksArray = artistObject.getJSONArray("artworks");
+                for (int j = 0; j < artworksArray.length(); j++) {
+                    JSONObject artworkObject = artworksArray.getJSONObject(j);
+                    String artStyleFromJson = artworkObject.getString("artstyle");
 
-                    // Create Artist and Artwork instances
-                    Artist artist = new Artist(artistName, artistBiography, dateOfBirth, dateOfDeath, artistImageResId, new ArrayList<>());
-                    Artwork artwork = new Artwork(title, description, imageResId, artist);
+                    if (artStyleFromJson.equalsIgnoreCase(artStyle)) {
+                        String title = artworkObject.getString("title");
+                        String description = artworkObject.getString("description");
+                        String image = artworkObject.getString("image");
 
-                    // Add artwork to the artist's list and to the result list
-                    artist.getArtworks().add(artwork);
-                    artworks.add(artwork);
+                        int imageResId = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
+                        Artwork artwork = new Artwork(title, description, imageResId, artist);
+
+                        // Add artwork to the artist’s artwork list and to the overall list
+                        artist.getArtworks().add(artwork);
+                        artworks.add(artwork);
+                    }
                 }
             }
         } catch (Exception e) {
@@ -114,11 +118,32 @@ public class FileManager {
             is.close();
             String json = new String(buffer, StandardCharsets.UTF_8);
 
-            JSONArray artworksArray = new JSONArray(json);
-            for (int i = 0; i < artworksArray.length(); i++) {
-                JSONObject artwork = artworksArray.getJSONObject(i);
-                if (artwork.getString("title").equalsIgnoreCase(artworkTitle)) {
-                    return artwork;
+            JSONArray artistsArray = new JSONArray(json);
+            for (int i = 0; i < artistsArray.length(); i++) {
+                JSONObject artistObject = artistsArray.getJSONObject(i);
+                JSONArray artworksArray = artistObject.getJSONArray("artworks");
+
+                for (int j = 0; j < artworksArray.length(); j++) {
+                    JSONObject artworkObject = artworksArray.getJSONObject(j);
+                    if (artworkObject.getString("title").equalsIgnoreCase(artworkTitle)) {
+                        // Add artist details to the artwork object for a complete response
+                        JSONObject artworkWithArtist = new JSONObject();
+                        artworkWithArtist.put("title", artworkObject.getString("title"));
+                        artworkWithArtist.put("description", artworkObject.getString("description"));
+                        artworkWithArtist.put("artstyle", artworkObject.getString("artstyle"));
+                        artworkWithArtist.put("image", artworkObject.getString("image"));
+
+                        // Add artist information to the artwork JSON
+                        JSONObject artistInfo = new JSONObject();
+                        artistInfo.put("name", artistObject.getString("name"));
+                        artistInfo.put("biography", artistObject.getString("biography"));
+                        artistInfo.put("dateOfBirth", artistObject.getString("dateOfBirth"));
+                        artistInfo.put("dateOfDeath", artistObject.optString("dateOfDeath", null));
+                        artistInfo.put("image", artistObject.getString("image"));
+
+                        artworkWithArtist.put("artist", artistInfo);
+                        return artworkWithArtist;
+                    }
                 }
             }
         } catch (Exception e) {
