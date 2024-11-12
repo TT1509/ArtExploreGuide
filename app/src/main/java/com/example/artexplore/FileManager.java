@@ -134,14 +134,7 @@ public class FileManager {
                         artworkWithArtist.put("image", artworkObject.getString("image"));
 
                         // Add artist information to the artwork JSON
-                        JSONObject artistInfo = new JSONObject();
-                        artistInfo.put("name", artistObject.getString("name"));
-                        artistInfo.put("biography", artistObject.getString("biography"));
-                        artistInfo.put("dateOfBirth", artistObject.getString("dateOfBirth"));
-                        artistInfo.put("dateOfDeath", artistObject.optString("dateOfDeath", null));
-                        artistInfo.put("image", artistObject.getString("image"));
-
-                        artworkWithArtist.put("artist", artistInfo);
+                        artworkWithArtist.put("artist", artistObject.getString("name"));
                         return artworkWithArtist;
                     }
                 }
