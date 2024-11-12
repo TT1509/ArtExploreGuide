@@ -45,5 +45,19 @@
             android:textSize="14sp"
             android:paddingBottom="8dp" />
 
+        <TextView
+            android:id="@+id/artworksTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artworks:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/artworksListTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
     </LinearLayout>
 </ScrollView>
