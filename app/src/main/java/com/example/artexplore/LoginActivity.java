@@ -46,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (isValidUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
-                    // Navigate to ArtworksActivity
-                    Intent intent = new Intent(LoginActivity.this, ArtStylesActivity.class);
+                    // Navigate to MenuActivity
+                    Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

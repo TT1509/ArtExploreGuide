@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <Button
+        android:id="@+id/artStylesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artworks"
+        android:padding="12dp"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/artistsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Artists"
+        android:padding="12dp"
+        android:backgroundTint="#6200EE"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

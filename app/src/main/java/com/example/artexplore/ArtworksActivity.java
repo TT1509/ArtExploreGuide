@@ -52,6 +52,4 @@ public class ArtworksActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(adapter);
     }
-
-
 }
