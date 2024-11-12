@@ -1,10 +1,13 @@
 package com.example.artexplore;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.artexplore.model.Artist;
 import com.example.artexploreguide.R;
 
 import org.json.JSONArray;
@@ -36,22 +39,26 @@ public class ArtDetailActivity extends AppCompatActivity {
         if (artwork != null) {
             try {
                 // Set data to views
-                String title = artwork.getString("title");
-                String artist = artwork.getString("artist");
-                String description = artwork.getString("description");
-                String image = artwork.getString("image");
-
-                titleTextView.setText(title);
-                artistTextView.setText("Artist: " + artist);
-                descriptionTextView.setText(description);
+                titleTextView.setText(artwork.getString("title"));
+                String artistName = artwork.getString("artist");
+                artistTextView.setText("Artist: " + artistName);
+                descriptionTextView.setText(artwork.getString("description"));
 
                 // Load image from drawable resources
-                int imageResId = getResources().getIdentifier(image, "drawable", getPackageName());
+                int imageResId = getResources().getIdentifier(artwork.getString("image"), "drawable", getPackageName());
                 artworkImageView.setImageResource(imageResId);
+
+                // Make artist name clickable to open ArtistDetailActivity
+                artistTextView.setOnClickListener(v -> {
+                    Intent intent = new Intent(ArtDetailActivity.this, ArtistDetailActivity.class);
+                    intent.putExtra("ARTIST_NAME", artistName);
+                    startActivity(intent);
+                });
 
             } catch (JSONException e) {
                 Log.e(TAG, "Error parsing artwork JSON", e);
             }
         }
     }
+
 }
