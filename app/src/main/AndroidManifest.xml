@@ -13,6 +13,9 @@
         android:theme="@style/Theme.ArtExplore"
         tools:targetApi="31">
         <activity
+            android:name="com.example.artexplore.AllArtworksActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.artexplore.ArtistDetailActivity"
             android:exported="false" />
         <activity
