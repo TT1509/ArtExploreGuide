@@ -8,36 +8,41 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.artexplore.model.ArtStyle;
 import com.example.artexploreguide.R;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ArtStylesActivity extends AppCompatActivity {
+
+    private String targetActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_art_styles);
 
+        // Retrieve the target activity from the intent
+        targetActivity = getIntent().getStringExtra("TARGET_ACTIVITY");
+
         RecyclerView recyclerView = findViewById(R.id.recyclerViewArtStyles);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        // Read art styles from JSON file
+        // Load art styles from JSON
         List<ArtStyle> artStyles = FileManager.loadArtStylesFromJson(this);
 
-        ArtStyleAdapter adapter = new ArtStyleAdapter(artStyles, new ArtStyleAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(ArtStyle artStyle) {
-                Intent intent = new Intent(ArtStylesActivity.this, ArtworksActivity.class);
+        // Set up the adapter with a click listener
+        ArtStyleAdapter adapter = new ArtStyleAdapter(artStyles, artStyle -> {
+            Intent intent;
+            if ("ArtworksActivity".equals(targetActivity)) {
+                intent = new Intent(ArtStylesActivity.this, ArtworksActivity.class);
                 intent.putExtra("ART_STYLE_NAME", artStyle.getName());
-                startActivity(intent);
+            } else {
+                intent = new Intent(ArtStylesActivity.this, ArtStylesDetailActivity.class);
+                intent.putExtra("ART_STYLE_NAME", artStyle.getName());
+                intent.putExtra("ART_STYLE_IMAGE_RES_ID", artStyle.getImageResId());
+                intent.putExtra("ART_STYLE_DESCRIPTION", artStyle.getDescription());
             }
+            startActivity(intent);
         });
+
         recyclerView.setAdapter(adapter);
     }
-
-
 }

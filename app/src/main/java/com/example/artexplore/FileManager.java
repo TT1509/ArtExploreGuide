@@ -161,10 +161,11 @@ public class FileManager {
                 JSONObject artStyleObject = jsonArray.getJSONObject(i);
                 String name = artStyleObject.getString("name");
                 String image = artStyleObject.getString("image");
+                String description = artStyleObject.getString("description");
 
                 // Add artStyle object to list (use image reference in drawable)
                 int imageResId = context.getResources().getIdentifier(image, "drawable", context.getPackageName());
-                artStyles.add(new ArtStyle(name, imageResId));
+                artStyles.add(new ArtStyle(name, imageResId, description));
             }
         } catch (Exception e) {
             e.printStackTrace();

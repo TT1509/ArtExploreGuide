@@ -1,18 +1,22 @@
 [
   {
     "name": "Impressionism",
-    "image": "impressionism"
+    "image": "impressionism",
+    "description": "A 19th-century art movement focused on light and color."
   },
   {
     "name": "Post-Impressionism",
-    "image": "post-impressionism"
+    "image": "post-impressionism",
+    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
   },
   {
     "name": "Abstract",
-    "image": "abstract1"
+    "image": "abstract1",
+    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
   },
   {
     "name": "Cubism",
-    "image": "cubism"
+    "image": "cubism",
+    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
   }
 ]

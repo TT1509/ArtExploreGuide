@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ArtExploreGuide</string>
     <string name="artwork_image_desc">Artwork image</string>
+    <string name="art_style_image_desc">Description of the art style image</string>
 </resources>

@@ -29,7 +29,7 @@
         android:id="@+id/artLocationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Artworks Location"
+        android:text="Artstyles"
         android:padding="12dp"
         android:backgroundTint="#6200EE"
         android:textColor="#FFFFFF" />

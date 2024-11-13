@@ -24,6 +24,7 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ArtStylesActivity.class);
+                intent.putExtra("TARGET_ACTIVITY", "ArtworksActivity");
                 startActivity(intent);
             }
         });
@@ -38,7 +39,8 @@ public class MenuActivity extends AppCompatActivity {
         buttonArtworks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuActivity.this, AllArtworksActivity.class);
+                Intent intent = new Intent(MenuActivity.this, ArtStylesActivity.class);
+                intent.putExtra("TARGET_ACTIVITY", "ArtStylesDetailActivity");
                 startActivity(intent);
             }
         });
