@@ -53,7 +53,7 @@ public class ArtworksActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(adapter);
 
-        // Initialize search functionality
+        // Search function
         SearchView searchView = findViewById(R.id.searchViewArtworks);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

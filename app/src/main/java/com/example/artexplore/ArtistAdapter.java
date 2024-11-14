@@ -12,10 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.artexplore.model.Artist;
 import com.example.artexploreguide.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder> {
     private final List<Artist> artists;
+    private List<Artist> filteredArtists;
     private final OnItemClickListener listener;
 
     public interface OnItemClickListener {
@@ -24,6 +26,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
 
     public ArtistAdapter(List<Artist> artists, OnItemClickListener listener) {
         this.artists = artists;
+        this.filteredArtists = new ArrayList<>(artists);
         this.listener = listener;
     }
 
@@ -43,6 +46,20 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
     @Override
     public int getItemCount() {
         return artists.size();
+    }
+
+    public void filter(String query) {
+        filteredArtists.clear();
+        if (query.isEmpty()) {
+            filteredArtists.addAll(artists); // Show all artists if query is empty
+        } else {
+            for (Artist artist : artists) {
+                if (artist.getName().toLowerCase().contains(query.toLowerCase())) {
+                    filteredArtists.add(artist);
+                }
+            }
+        }
+        notifyDataSetChanged(); // Notify the adapter to refresh the view
     }
 
     public static class ArtistViewHolder extends RecyclerView.ViewHolder {

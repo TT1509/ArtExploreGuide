@@ -6,6 +6,12 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchViewArtists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Artists..." />
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"
