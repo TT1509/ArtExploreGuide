@@ -1,37 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
+    android:background="#FFFFFF"
     android:gravity="center"
-    android:background="#FFFFFF">
+    android:orientation="vertical"
+    android:padding="24dp">
 
     <Button
         android:id="@+id/artStylesButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Artworks"
-        android:padding="12dp"
         android:backgroundTint="#6200EE"
+        android:padding="12dp"
+        android:text="Artworks"
         android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/artistsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Artists"
-        android:padding="12dp"
         android:backgroundTint="#6200EE"
+        android:padding="12dp"
+        android:text="Artists"
         android:textColor="#FFFFFF" />
 
     <Button
         android:id="@+id/artLocationButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Artstyles"
-        android:padding="12dp"
         android:backgroundTint="#6200EE"
+        android:padding="12dp"
+        android:text="Artstyles"
         android:textColor="#FFFFFF" />
+
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="48dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#FF0000"
+        android:text="X"
+        android:textColor="#FFFFFF" />
+
 
 </LinearLayout>
