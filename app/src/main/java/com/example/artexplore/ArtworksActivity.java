@@ -3,6 +3,7 @@ package com.example.artexplore;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -51,5 +52,21 @@ public class ArtworksActivity extends AppCompatActivity {
             }
         });
         recyclerView.setAdapter(adapter);
+
+        // Initialize search functionality
+        SearchView searchView = findViewById(R.id.searchViewArtworks);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                adapter.filter(query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapter.filter(newText);
+                return false;
+            }
+        });
     }
 }

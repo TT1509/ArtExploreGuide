@@ -10,14 +10,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.artexplore.model.Artwork;
 import com.example.artexploreguide.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkViewHolder>{
     private List<Artwork> artworks;
+    private List<Artwork> fullArtworkList;
     private OnItemClickListener listener;
 
     public ArtworkAdapter(List<Artwork> artworks, OnItemClickListener listener) {
         this.artworks = artworks;
+        this.fullArtworkList = new ArrayList<>(artworks);
         this.listener = listener;
     }
 
@@ -38,6 +41,21 @@ public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkV
     @Override
     public int getItemCount() {
         return artworks.size();
+    }
+
+    public void filter(String query) {
+        artworks.clear();
+        if (query.isEmpty()) {
+            artworks.addAll(fullArtworkList);
+        } else {
+            String lowerCaseQuery = query.toLowerCase();
+            for (Artwork artwork : fullArtworkList) {
+                if (artwork.getTitle().toLowerCase().contains(lowerCaseQuery)) {
+                    artworks.add(artwork);
+                }
+            }
+        }
+        notifyDataSetChanged();
     }
 
     public interface OnItemClickListener {
