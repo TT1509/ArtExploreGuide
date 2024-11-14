@@ -26,17 +26,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(com.example.artexploreguide.R.layout.activity_login);
 
-        // Check if user is already logged in
-        SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
-        boolean isLoggedIn = preferences.getBoolean("is_logged_in", false);
-
-        if (isLoggedIn) {
-            // Redirect to MenuActivity
-            Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
-            startActivity(intent);
-            finish();
-        }
-
         // Initialize UI components
         EditText usernameEditText = findViewById(R.id.loginUsernameEditText);
         EditText passwordEditText = findViewById(R.id.loginPasswordEditText);
