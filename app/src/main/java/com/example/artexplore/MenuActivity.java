@@ -40,6 +40,7 @@ public class MenuActivity extends AppCompatActivity {
         Button buttonArtStyles = findViewById(R.id.artStylesButton);
         Button buttonArtists = findViewById(R.id.artistsButton);
         Button buttonArtworks = findViewById(R.id.artLocationButton);
+        Button buttonFavorite = findViewById(R.id.favoriteButton);
 
         buttonArtStyles.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +63,15 @@ public class MenuActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MenuActivity.this, ArtStylesActivity.class);
                 intent.putExtra("TARGET_ACTIVITY", "ArtStylesDetailActivity");
+                startActivity(intent);
+            }
+        });
+
+        buttonFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuActivity.this, FavoriteActivity.class);
+                intent.putExtra("TARGET_ACTIVITY", "FavoriteActivity");
                 startActivity(intent);
             }
         });

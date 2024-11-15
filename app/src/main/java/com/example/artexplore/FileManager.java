@@ -273,5 +273,99 @@ public class FileManager {
         }
         return null;
     }
+
+    private static final String FILE_NAME = "users.json";
+
+    // Add artwork to the user's favorite list
+    public static void addArtworkToFavorites(Context context, String username, String artworkTitle) {
+        try {
+            String data = readFromFile(context, FILE_NAME);
+            if (data.isEmpty()) return;
+
+            JSONArray usersArray = new JSONArray(data);
+            for (int i = 0; i < usersArray.length(); i++) {
+                JSONObject userObject = usersArray.getJSONObject(i);
+                if (userObject.getString("username").equals(username)) {
+                    // Get or create the favorites array
+                    JSONArray favoritesArray = userObject.optJSONArray("favorites");
+                    if (favoritesArray == null) {
+                        favoritesArray = new JSONArray();
+                    }
+
+                    // Add the artwork title if it doesn't already exist
+                    if (!favoritesArray.toString().contains(artworkTitle)) {
+                        favoritesArray.put(artworkTitle);
+                        userObject.put("favorites", favoritesArray);
+                    }
+                    break;
+                }
+            }
+
+            // Save updated JSON
+            writeToFile(usersArray.toString(), context, FILE_NAME);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Remove artwork from the user's favorite list
+    public static void removeArtworkFromFavorites(Context context, String username, String artworkTitle) {
+        try {
+            String data = readFromFile(context, FILE_NAME);
+            if (data.isEmpty()) return;
+
+            JSONArray usersArray = new JSONArray(data);
+            for (int i = 0; i < usersArray.length(); i++) {
+                JSONObject userObject = usersArray.getJSONObject(i);
+                if (userObject.getString("username").equals(username)) {
+                    // Remove the artwork from favorites
+                    JSONArray favoritesArray = userObject.optJSONArray("favorites");
+                    if (favoritesArray != null) {
+                        for (int j = 0; j < favoritesArray.length(); j++) {
+                            if (favoritesArray.getString(j).equals(artworkTitle)) {
+                                favoritesArray.remove(j);
+                                break;
+                            }
+                        }
+                        userObject.put("favorites", favoritesArray);
+                    }
+                    break;
+                }
+            }
+
+            // Save updated JSON
+            writeToFile(usersArray.toString(), context, FILE_NAME);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Retrieve the favorite list for a specific user
+    public static List<String> getFavorites(Context context, String username) {
+        List<String> favorites = new ArrayList<>();
+        try {
+            String data = readFromFile(context, FILE_NAME);
+            if (data.isEmpty()) return favorites;
+
+            JSONArray usersArray = new JSONArray(data);
+            for (int i = 0; i < usersArray.length(); i++) {
+                JSONObject userObject = usersArray.getJSONObject(i);
+                if (userObject.getString("username").equals(username)) {
+                    JSONArray favoritesArray = userObject.optJSONArray("favorites");
+                    if (favoritesArray != null) {
+                        for (int j = 0; j < favoritesArray.length(); j++) {
+                            favorites.add(favoritesArray.getString(j));
+                        }
+                    }
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return favorites;
+    }
 }
 

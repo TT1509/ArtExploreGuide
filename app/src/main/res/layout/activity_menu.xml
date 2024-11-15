@@ -36,6 +36,15 @@
         android:textColor="#FFFFFF" />
 
     <Button
+        android:id="@+id/favoriteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#6200EE"
+        android:padding="12dp"
+        android:text="Favorite Artworks"
+        android:textColor="#FFFFFF" />
+
+    <Button
         android:id="@+id/logoutButton"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
@@ -45,6 +54,5 @@
         android:backgroundTint="#FF0000"
         android:text="X"
         android:textColor="#FFFFFF" />
-
 
 </LinearLayout>

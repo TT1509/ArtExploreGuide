@@ -12,6 +12,16 @@
         android:scaleType="centerCrop"
         android:contentDescription="@string/artwork_image_desc" />
 
+    <ImageButton
+        android:id="@+id/favoriteButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_star_outline"
+        android:layout_gravity="end"
+        android:contentDescription="Favorite Button"
+        android:background="@null" />
+
+
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="wrap_content"

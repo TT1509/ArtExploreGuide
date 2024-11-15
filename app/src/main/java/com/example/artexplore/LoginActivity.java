@@ -1,6 +1,7 @@
 // File: LoginActivity.java
 package com.example.artexplore;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -47,6 +48,13 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (isValidUser(username, password)) {
                     Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+
+                    // Save logged-in username to SharedPreferences
+                    SharedPreferences preferences = getSharedPreferences("user_session", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("logged_in_username", username);
+                    editor.apply();
+
                     // Navigate to MenuActivity
                     Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
                     startActivity(intent);
@@ -93,3 +101,4 @@ public class LoginActivity extends AppCompatActivity {
         return false;
     }
 }
+
