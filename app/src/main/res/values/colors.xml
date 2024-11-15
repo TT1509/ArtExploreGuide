@@ -7,4 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="green_500">#4CAF50</color>
+    <color name="green_700">#388E3C</color>
+    <color name="lime_200">#E6EE9C</color>
+    <color name="lime_700">#AFB42B</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_700">#616161</color>
+    <color name="ripple_green">#80C8E6C9</color>
 </resources>
