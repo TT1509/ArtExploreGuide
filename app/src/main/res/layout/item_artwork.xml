@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="Artwork Title"
         android:textSize="14sp"
-        android:textColor="#000000"
+        android:textColor="?attr/colorOnBackground"
         android:layout_marginTop="8dp"
         android:gravity="center"/>
 </LinearLayout>

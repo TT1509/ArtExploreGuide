@@ -1,16 +1,31 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.ArtExplore" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <!-- Primary brand color -->
+        <item name="colorPrimary">#1B5E20</item> <!-- Deep Green -->
+        <item name="colorPrimaryVariant">#004D40</item> <!-- Darker Green -->
+        <item name="colorOnPrimary">#FFFFFF</item> <!-- White text/icons on primary -->
+
+        <!-- Secondary brand color -->
+        <item name="colorSecondary">#C0CA33</item> <!-- Lime -->
+        <item name="colorSecondaryVariant">#9E9D24</item> <!-- Dark Lime -->
+        <item name="colorOnSecondary">#000000</item> <!-- Black text/icons on secondary -->
+
+        <!-- Background and surface colors -->
+        <item name="backgroundColor">#121212</item> <!-- Black background -->
+        <item name="colorOnBackground">#FFFFFF</item> <!-- White text/icons on background -->
+        <item name="colorSurface">#1E1E1E</item> <!-- Dark gray for surfaces -->
+        <item name="colorOnSurface">#FFFFFF</item> <!-- White text/icons on surfaces -->
+
+        <!-- Error colors -->
+        <item name="colorError">#CF6679</item> <!-- Light Red -->
+        <item name="colorOnError">#000000</item> <!-- Black text/icons on error -->
+
+        <!-- Text colors -->
+        <item name="android:textColorPrimary">#FFFFFF</item> <!-- White primary text -->
+        <item name="android:textColorSecondary">#B0BEC5</item> <!-- Light gray secondary text -->
+
+        <!-- Status bar color -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
 </resources>

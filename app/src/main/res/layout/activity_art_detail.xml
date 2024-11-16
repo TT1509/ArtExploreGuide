@@ -29,7 +29,7 @@
         android:layout_marginTop="16dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black" />
+        android:textColor="?attr/colorOnBackground" />
 
     <TextView
         android:id="@+id/artistTextView"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
-        android:textColor="@color/green_500"
+        android:textColor="?attr/colorPrimary"
         android:textStyle="bold"
         android:autoLink="none" />
 
@@ -48,6 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="16sp"
-        android:textColor="@color/black" />
+        android:textColor="?attr/colorOnBackground" />
 
 </LinearLayout>
