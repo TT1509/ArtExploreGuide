@@ -1,22 +1,57 @@
 [
   {
     "name": "Impressionism",
-    "image": "impressionism",
-    "description": "A 19th-century art movement focused on light and color."
+    "image": "starry_night_image",
+    "description": "Originating in France in the late 19th century, Impressionism focuses on capturing the transient effects of light and color. Artists like Claude Monet and Pierre-Auguste Renoir used short, visible brush strokes and open compositions to depict everyday scenes and landscapes, emphasizing the play of natural light and movement."
   },
   {
     "name": "Post-Impressionism",
-    "image": "post-impressionism",
-    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
+    "image": "basket_of_apples_image",
+    "description": "Emerging as a reaction against Impressionism's limitations, Post-Impressionism includes a variety of styles that emphasize emotional expression and symbolic content. Artists like Vincent van Gogh, Paul Cézanne, and Paul Gauguin used vivid colors, thick application of paint, and distinct forms to convey deeper psychological and emotional truths."
   },
   {
     "name": "Abstract",
-    "image": "abstract1",
-    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
+    "image": "composition_x_image",
+    "description": "Abstract art breaks away from traditional representation, using shapes, colors, and forms to create compositions independent of visual references in the real world. Pioneers like Wassily Kandinsky and Piet Mondrian focused on the intrinsic qualities of the elements of art, such as line, color, and form, to evoke emotions and ideas."
   },
   {
     "name": "Cubism",
-    "image": "cubism",
-    "description": "An early-20th-century avant-garde art movement that revolutionized European painting."
+    "image": "les_demoiselles_d_avignon_image",
+    "description": "Developed by Pablo Picasso and Georges Braque in the early 20th century, Cubism revolutionized European painting and sculpture. It involves breaking down objects into geometric shapes and depicting them from multiple angles simultaneously. This fragmented approach challenges traditional perspectives and emphasizes the flat, two-dimensional surface of the canvas."
+  },
+  {
+    "name": "Realism",
+    "image": "stone_breakers_image",
+    "description": "Realism emerged in mid-19th century France as a reaction against Romanticism. It focuses on depicting everyday life and ordinary people with accurate detail and without idealization. Artists like Gustave Courbet and Jean-François Millet portrayed the lives of the working class and rural scenes with a truthful, unembellished approach."
+  },
+  {
+    "name": "Surrealism",
+    "image": "persistence_of_memory_image",
+    "description": "Surrealism, which began in the 1920s, seeks to unlock the creative potential of the unconscious mind. Influenced by the theories of Sigmund Freud, Surrealist artists like Salvador Dalí and René Magritte used dream-like imagery, unexpected juxtapositions, and bizarre scenes to explore the irrational and the fantastical."
+  },
+  {
+    "name": "Art Nouveau",
+    "image": "the_seasons_image",
+    "description": "Flourishing between 1890 and 1910, Art Nouveau is characterized by its use of long, sinuous, organic lines and natural forms. This style, seen in the works of artists like Gustav Klimt and architects like Antoni Gaudí, often features floral and plant motifs, and it aimed to create a harmonious and decorative aesthetic in architecture, interior design, and applied arts."
+  },
+  {
+    "name": "Renaissance",
+    "image": "mona_lisa_image",
+    "description": "Spanning the 14th to the 17th century, the Renaissance marked a revival of classical learning and wisdom. Artists like Leonardo da Vinci, Michelangelo, and Raphael focused on humanism, proportion, perspective, and the naturalistic depiction of the human body. This period saw a renewed interest in the art and philosophy of ancient Greece and Rome."
+  },
+  {
+    "name": "Baroque",
+    "image": "calling_of_saint_matthew_image",
+    "description": "Baroque art, which developed in the early 17th century, is known for its dramatic use of light and shadow, rich colors, and intense emotional expression. Artists like Caravaggio and Peter Paul Rubens created dynamic compositions that often depicted religious themes and grandiose scenes with a sense of movement and tension."
+  },
+  {
+    "name": "Fauvism",
+    "image": "woman_with_a_hat_image",
+    "description": "Fauvism, led by Henri Matisse and André Derain, emerged in the early 20th century. It is characterized by bold, vibrant colors and simplified forms. Fauvist artists used color to express emotion rather than to represent reality, often applying paint directly from the tube to create a sense of spontaneity and intensity."
+  },
+  {
+    "name": "Digital Art",
+    "image": "infected_mushroom_image",
+    "description": "Digital Art refers to artistic works created using digital technology as the primary medium. It encompasses various techniques, including computer-generated images, digital painting, 3D modeling, and interactive media. In recent years, digital art has gained widespread recognition, particularly with the rise of NFTs (Non-Fungible Tokens), as seen in the works of artists like Beeple and Pak. Digital art allows for innovative exploration of visual aesthetics, using tools and techniques that were not previously possible with traditional art forms."
   }
 ]

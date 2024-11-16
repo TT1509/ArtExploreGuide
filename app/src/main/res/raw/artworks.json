@@ -1,7 +1,7 @@
 [
   {
     "name": "Vincent van Gogh",
-    "biography": "A Dutch post-impressionist painter.",
+    "biography": "A Dutch post-impressionist painter. Van Gogh is among the most influential figures in the history of Western art, known for his bold, dramatic brush strokes and emotional depth.",
     "dateOfBirth": "1853-03-30",
     "dateOfDeath": "1890-07-29",
     "image": "vincent_van_gogh_image",
@@ -9,20 +9,20 @@
       {
         "artstyle": "Impressionism",
         "title": "Starry Night",
-        "description": "A famous painting by Vincent van Gogh.",
-        "image": "sample_image"
+        "description": "One of Van Gogh's most famous works, 'Starry Night' captures the swirling night sky above a small village, symbolizing a mix of beauty and chaos.",
+        "image": "starry_night_image"
       },
       {
         "artstyle": "Impressionism",
         "title": "Sunflowers",
-        "description": "Another famous painting by Vincent van Gogh.",
-        "image": "sample_image_2"
+        "description": "This series of paintings by Van Gogh showcases vibrant yellow sunflowers, symbolizing warmth, life, and the beauty of nature.",
+        "image": "sunflowers_image"
       }
     ]
   },
   {
     "name": "Claude Monet",
-    "biography": "A founder of French Impressionist painting.",
+    "biography": "A founder of French Impressionist painting, Monet is known for his experiments with light and color, which revolutionized landscape painting.",
     "dateOfBirth": "1840-11-14",
     "dateOfDeath": "1926-12-05",
     "image": "claude_monet_image",
@@ -30,14 +30,244 @@
       {
         "artstyle": "Impressionism",
         "title": "The Water Lily Pond",
-        "description": "A famous painting by Claude Monet.",
-        "image": "sample_image"
+        "description": "Monet's 'Water Lily Pond' is an iconic piece that showcases his fascination with reflections, light, and nature, becoming a hallmark of Impressionism.",
+        "image": "water_lily_pond_image"
       },
       {
         "artstyle": "Impressionism",
         "title": "Impression, Sunrise",
-        "description": "Another iconic piece by Claude Monet.",
-        "image": "sample_image_2"
+        "description": "This painting, which gave Impressionism its name, depicts the port of Le Havre at sunrise, with soft, diffused light and vibrant color.",
+        "image": "impression_sunrise_image"
+      }
+    ]
+  },
+  {
+    "name": "Paul Cézanne",
+    "biography": "A French Post-Impressionist painter whose work laid the foundation for modern art. Cézanne’s use of geometric forms and innovative perspective influenced the development of Cubism.",
+    "dateOfBirth": "1839-01-19",
+    "dateOfDeath": "1906-10-22",
+    "image": "paul_cezanne_image",
+    "artworks": [
+      {
+        "artstyle": "Post-Impressionism",
+        "title": "Mont Sainte-Victoire",
+        "description": "This iconic landscape painting showcases Cézanne’s innovative use of color and geometric shapes to depict the French countryside.",
+        "image": "mont_sainte_victoire_image"
+      },
+      {
+        "artstyle": "Post-Impressionism",
+        "title": "The Basket of Apples",
+        "description": "A still life that challenges traditional perspectives, with tilted planes and distorted proportions, reflecting Cézanne’s exploration of form.",
+        "image": "basket_of_apples_image"
+      }
+    ]
+  },
+  {
+    "name": "Pablo Picasso",
+    "biography": "A Spanish painter and sculptor, Picasso was one of the most influential artists of the 20th century, co-founding the Cubist movement and creating iconic works.",
+    "dateOfBirth": "1881-10-25",
+    "dateOfDeath": "1973-04-08",
+    "image": "pablo_picasso_image",
+    "artworks": [
+      {
+        "artstyle": "Cubism",
+        "title": "Les Demoiselles d'Avignon",
+        "description": "A revolutionary work that redefined Western art, 'Les Demoiselles d'Avignon' breaks the traditional perspective and presents fragmented forms.",
+        "image": "les_demoiselles_d_avignon_image"
+      },
+      {
+        "artstyle": "Cubism",
+        "title": "Guernica",
+        "description": "One of Picasso's most powerful anti-war paintings, 'Guernica' uses fragmented forms to depict the horrors of the Spanish Civil War.",
+        "image": "guernica_image"
+      }
+    ]
+  },
+  {
+    "name": "Georges Braque",
+    "biography": "A French painter and sculptor, Braque was a pioneer of Cubism alongside Picasso. His work is known for its use of fragmented shapes and muted color palettes.",
+    "dateOfBirth": "1882-05-13",
+    "dateOfDeath": "1963-08-31",
+    "image": "georges_braque_image",
+    "artworks": [
+      {
+        "artstyle": "Cubism",
+        "title": "Violin and Candlestick",
+        "description": "This iconic Cubist painting by Braque deconstructs the violin and candlestick into geometric forms, showcasing the fragmented nature of reality.",
+        "image": "violin_and_candlestick_image"
+      },
+      {
+        "artstyle": "Cubism",
+        "title": "Houses at l'Estaque",
+        "description": "A key example of Braque’s early Cubism, 'Houses at l'Estaque' presents a fragmented view of the landscape using simplified shapes and muted tones.",
+        "image": "houses_at_l_estaque_image"
+      }
+    ]
+  },
+  {
+    "name": "Wassily Kandinsky",
+    "biography": "A Russian painter and one of the pioneers of abstract art, Kandinsky’s work is known for its vibrant colors and dynamic forms that express the emotional impact of color and shape.",
+    "dateOfBirth": "1866-12-16",
+    "dateOfDeath": "1944-12-13",
+    "image": "wassily_kandinsky_image",
+    "artworks": [
+      {
+        "artstyle": "Abstract",
+        "title": "Composition X",
+        "description": "A landmark work of abstract art, 'Composition X' explores dynamic colors and shapes that evoke deep emotional resonance without representing anything concrete.",
+        "image": "composition_x_image"
+      },
+      {
+        "artstyle": "Abstract",
+        "title": "Yellow-Red-Blue",
+        "description": "Kandinsky's 'Yellow-Red-Blue' explores the relationship between color and form, creating a visually stimulating piece with bold primary colors.",
+        "image": "yellow_red_blue_image"
+      }
+    ]
+  },
+  {
+    "name": "Salvador Dalí",
+    "biography": "A Spanish surrealist artist, Dalí is known for his eccentric personality and imaginative works that challenge the boundaries of reality and perception.",
+    "dateOfBirth": "1904-05-11",
+    "dateOfDeath": "1989-01-23",
+    "image": "salvador_dali_image",
+    "artworks": [
+      {
+        "artstyle": "Surrealism",
+        "title": "The Persistence of Memory",
+        "description": "This iconic painting features melting clocks in a dream-like landscape, symbolizing the fluidity of time and the impermanence of human perception.",
+        "image": "persistence_of_memory_image"
+      },
+      {
+        "artstyle": "Surrealism",
+        "title": "The Elephants",
+        "description": "In 'The Elephants', Dalí combines distorted proportions and unusual perspectives to create a dream-like composition that explores the bizarre and the fantastical.",
+        "image": "the_elephants_image"
+      }
+    ]
+  },
+  {
+    "name": "Michael Joseph Winkelmann (Beeple)",
+    "biography": " Beeple, is an American digital artist, graphic designer, and animator known for selling NFTs. In his art, he uses various media to create comical, phantasmagoric works that make political and social commentary while using pop culture figures as references.",
+    "dateOfBirth": "1981-06-20",
+    "image": "beeple_image",
+    "artworks": [
+      {
+        "artstyle": "Digital Art",
+        "title": "Infected Mushroom",
+        "description": "A surreal digital artwork depicting a vibrant, otherworldly scene.",
+        "image": "infected_mushroom_image"
+      },
+      {
+        "artstyle": "Digital Art",
+        "title": "Crossroads",
+        "description": "A reflective piece by Beeple on the state of politics and society.",
+        "image": "crossroads_image"
+      }
+    ]
+  },
+  {
+    "name": "Gustave Courbet",
+    "biography": "A French painter, Courbet was a leader of the Realist movement, depicting everyday scenes with a focus on truth and accuracy.",
+    "dateOfBirth": "1819-06-10",
+    "dateOfDeath": "1877-12-31",
+    "image": "gustave_courbet_image",
+    "artworks": [
+      {
+        "artstyle": "Realism",
+        "title": "The Stone Breakers",
+        "description": "A revolutionary realist painting, 'The Stone Breakers' depicts laborers at work, presenting the working class without romanticization.",
+        "image": "stone_breakers_image"
+      },
+      {
+        "artstyle": "Realism",
+        "title": "Burial at Ornans",
+        "description": "Courbet’s large-scale depiction of a funeral in a provincial French town, presenting ordinary people in a solemn, realistic manner.",
+        "image": "burial_at_ornans_image"
+      }
+    ]
+  },
+  {
+    "name": "Alphonse Mucha",
+    "biography": "A Czech artist and illustrator, Mucha was a prominent figure in the Art Nouveau movement, best known for his posters and decorative designs.",
+    "dateOfBirth": "1860-07-24",
+    "dateOfDeath": "1939-07-14",
+    "image": "alphonse_mucha_image",
+    "artworks": [
+      {
+        "artstyle": "Art Nouveau",
+        "title": "The Seasons",
+        "description": "A series of four decorative panels symbolizing the four seasons, with flowing lines and ornate details characteristic of Art Nouveau.",
+        "image": "the_seasons_image"
+      },
+      {
+        "artstyle": "Art Nouveau",
+        "title": "Job Cigarettes",
+        "description": "An iconic advertisement poster designed for Job Cigarettes, featuring a woman with flowing hair and intricate patterns typical of Mucha's style.",
+        "image": "job_cigarettes_image"
+      }
+    ]
+  },
+  {
+    "name": "Leonardo da Vinci",
+    "biography": "An Italian polymath, da Vinci was a key figure in the Renaissance, known for his masterful paintings, scientific studies, and inventions.",
+    "dateOfBirth": "1452-04-15",
+    "dateOfDeath": "1519-05-02",
+    "image": "leonardo_da_vinci_image",
+    "artworks": [
+      {
+        "artstyle": "Renaissance",
+        "title": "Mona Lisa",
+        "description": "Perhaps the most famous painting in the world, 'Mona Lisa' features a mysterious woman with a smile that has captivated audiences for centuries.",
+        "image": "mona_lisa_image"
+      },
+      {
+        "artstyle": "Renaissance",
+        "title": "The Last Supper",
+        "description": "A masterpiece depicting the moment Jesus announces that one of his disciples will betray him, showcasing da Vinci's use of perspective and emotion.",
+        "image": "last_supper_image"
+      }
+    ]
+  },
+  {
+    "name": "Caravaggio",
+    "biography": "An Italian Baroque painter known for his dramatic use of light and shadow, Caravaggio's work had a profound influence on the Baroque style.",
+    "dateOfBirth": "1571-09-29",
+    "dateOfDeath": "1610-07-18",
+    "image": "caravaggio_image",
+    "artworks": [
+      {
+        "artstyle": "Baroque",
+        "title": "The Calling of Saint Matthew",
+        "description": "A Baroque masterpiece depicting the moment Jesus calls Matthew to be his disciple, marked by dramatic lighting and emotional intensity.",
+        "image": "calling_of_saint_matthew_image"
+      },
+      {
+        "artstyle": "Baroque",
+        "title": "Judith Beheading Holofernes",
+        "description": "A powerful depiction of the biblical story of Judith, capturing both the violence and triumph in dramatic chiaroscuro.",
+        "image": "judith_beheading_holofernes_image"
+      }
+    ]
+  },
+  {
+    "name": "Henri Matisse",
+    "biography": "A leading figure in Fauvism, Matisse is known for his bold use of color and expressive brushwork that revolutionized modern art.",
+    "dateOfBirth": "1869-12-31",
+    "dateOfDeath": "1954-11-03",
+    "image": "henri_matisse_image",
+    "artworks": [
+      {
+        "artstyle": "Fauvism",
+        "title": "Woman with a Hat",
+        "description": "A portrait of Matisse’s wife, Amélie, painted with bright, expressive colors that characterize Fauvism.",
+        "image": "woman_with_a_hat_image"
+      },
+      {
+        "artstyle": "Fauvism",
+        "title": "The Joy of Life",
+        "description": "A colorful landscape featuring nude figures, demonstrating Matisse’s use of bright color and fluid, organic forms.",
+        "image": "joy_of_life_image"
       }
     ]
   }
