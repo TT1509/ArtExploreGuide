@@ -2,6 +2,7 @@ package com.example.artexplore;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -25,7 +26,9 @@ public class FavoriteActivity extends AppCompatActivity {
 
         // Retrieve logged-in user from SharedPreferences
         SharedPreferences prefs = getSharedPreferences("user_session", MODE_PRIVATE);
-        String loggedInUser = prefs.getString("logged_in_user", null);
+        String loggedInUser = prefs.getString("logged_in_username", null);
+
+        Log.d("FavoriteActivity", "Retrieved logged in user: " + loggedInUser);
 
         if (loggedInUser == null) {
             Toast.makeText(this, "No user logged in", Toast.LENGTH_SHORT).show();
