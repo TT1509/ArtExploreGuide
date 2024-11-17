@@ -23,17 +23,17 @@ public class MenuActivity extends AppCompatActivity {
         buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Clear user session data (if any, e.g., SharedPreferences)
+                // Clear user session data
                 SharedPreferences preferences = getSharedPreferences("user_session", MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.clear(); // Clear all saved data in SharedPreferences
+                editor.clear();
                 editor.apply();
 
                 // Redirect to LoginActivity
                 Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Clear activity stack
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                finish(); // Close MenuActivity
+                finish();
             }
         });
 
@@ -50,6 +50,7 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         buttonArtists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

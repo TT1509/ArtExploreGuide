@@ -21,6 +21,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         this.favoriteList = favoriteList;
     }
 
+    // Create a new ViewHolder object
     @NonNull
     @Override
     public FavoriteViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -29,6 +30,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         return new FavoriteViewHolder(view);
     }
 
+    // Binds data to the ViewHolder for a specific position
     @Override
     public void onBindViewHolder(@NonNull FavoriteViewHolder holder, int position) {
         String artworkTitle = favoriteList.get(position);
@@ -43,6 +45,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.Favori
         });
     }
 
+    // Returns the total number of items in the adapter
     @Override
     public int getItemCount() {
         return favoriteList.size();

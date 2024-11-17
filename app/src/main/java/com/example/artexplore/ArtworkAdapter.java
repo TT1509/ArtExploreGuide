@@ -24,12 +24,14 @@ public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkV
         this.listener = listener;
     }
 
+    // Create a new ViewHolder object
     @Override
     public ArtworkViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_artwork, parent, false);
         return new ArtworkViewHolder(view);
     }
 
+    // Binds data to the ViewHolder for a specific position
     @Override
     public void onBindViewHolder(ArtworkViewHolder holder, int position) {
         Artwork artwork = artworks.get(position);
@@ -38,11 +40,13 @@ public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkV
         holder.itemView.setOnClickListener(v -> listener.onItemClick(artwork));
     }
 
+    // Returns the total number of items in the adapter
     @Override
     public int getItemCount() {
         return artworks.size();
     }
 
+    // Filters the artwork list based on a search query
     public void filter(String query) {
         artworks.clear();
         if (query.isEmpty()) {
@@ -62,6 +66,7 @@ public class ArtworkAdapter extends RecyclerView.Adapter<ArtworkAdapter.ArtworkV
         void onItemClick(Artwork artwork);
     }
 
+    // ViewHolder class to hold and manage views for each item
     public static class ArtworkViewHolder extends RecyclerView.ViewHolder {
 
         public TextView title;

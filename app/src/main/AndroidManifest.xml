@@ -19,9 +19,6 @@
             android:name="com.example.artexplore.ArtStylesDetailActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.artexplore.AllArtworksActivity"
-            android:exported="false" />
-        <activity
             android:name="com.example.artexplore.ArtistDetailActivity"
             android:exported="false" />
         <activity

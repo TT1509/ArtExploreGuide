@@ -28,6 +28,7 @@ public class ArtStyleAdapter extends RecyclerView.Adapter<ArtStyleAdapter.ArtSty
         this.listener = listener;
     }
 
+    // Create a new ViewHolder object
     @NonNull
     @Override
     public ArtStyleViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,17 +36,20 @@ public class ArtStyleAdapter extends RecyclerView.Adapter<ArtStyleAdapter.ArtSty
         return new ArtStyleViewHolder(view);
     }
 
+    // Binds data to the ViewHolder for a specific position
     @Override
     public void onBindViewHolder(@NonNull ArtStyleViewHolder holder, int position) {
         ArtStyle artStyle = artStyles.get(position);
         holder.bind(artStyle, listener);
     }
 
+    // Returns the total number of items in the adapter
     @Override
     public int getItemCount() {
         return artStyles.size();
     }
 
+    // ViewHolder class to hold and manage views for each item
     public static class ArtStyleViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView textView;
@@ -56,6 +60,7 @@ public class ArtStyleAdapter extends RecyclerView.Adapter<ArtStyleAdapter.ArtSty
             textView = itemView.findViewById(R.id.textViewArtStyleName);
         }
 
+        // Binds data to the views in the ViewHolder
         public void bind(final ArtStyle artStyle, final OnItemClickListener listener) {
             imageView.setImageResource(artStyle.getImageResId());
             textView.setText(artStyle.getName());

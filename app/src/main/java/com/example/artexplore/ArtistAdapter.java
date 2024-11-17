@@ -15,6 +15,7 @@ import com.example.artexploreguide.R;
 import java.util.ArrayList;
 import java.util.List;
 
+// Adapter class for managing a list of Artist objects in a RecyclerView
 public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder> {
     private final List<Artist> artists;
     private List<Artist> filteredArtists;
@@ -30,6 +31,7 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
         this.listener = listener;
     }
 
+    // Create a new ViewHolder object
     @NonNull
     @Override
     public ArtistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,17 +39,20 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
         return new ArtistViewHolder(view);
     }
 
+    // Binds data to the ViewHolder for a specific position
     @Override
     public void onBindViewHolder(@NonNull ArtistViewHolder holder, int position) {
         Artist artist = artists.get(position);
         holder.bind(artist, listener);
     }
 
+    // Returns the total number of items in the adapter
     @Override
     public int getItemCount() {
         return artists.size();
     }
 
+    // Filters the artist list based on a search query
     public void filter(String query) {
         filteredArtists.clear();
         if (query.isEmpty()) {
@@ -62,11 +67,13 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
         notifyDataSetChanged(); // Notify the adapter to refresh the view
     }
 
+    // ViewHolder class to hold and manage views for each item
     public static class ArtistViewHolder extends RecyclerView.ViewHolder {
         private final TextView nameTextView;
         private final TextView biographyTextView;
         private final ImageView imageView;
 
+        // Constructor initializes the views
         public ArtistViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTextView = itemView.findViewById(R.id.artistName);
@@ -74,11 +81,13 @@ public class ArtistAdapter extends RecyclerView.Adapter<ArtistAdapter.ArtistView
             imageView = itemView.findViewById(R.id.artistImage);
         }
 
+        // Binds data to the views in the ViewHolder
         public void bind(final Artist artist, final OnItemClickListener listener) {
             nameTextView.setText(artist.getName());
             biographyTextView.setText(artist.getBiography());
             imageView.setImageResource(artist.getImageResId());
 
+            // Set a click listener on the entire item view
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
